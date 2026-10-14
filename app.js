@@ -128,10 +128,14 @@
       if (!p.available) action = '<div class="unavail">Indisponível</div>';
       else if (qty > 0) action = '<div class="stepper"><button type="button" data-dec="' + p.id + '" aria-label="Diminuir ' + esc(p.name + " " + p.size) + '">−</button><span aria-live="polite">' + qty + ' no carrinho</span><button type="button" data-inc="' + p.id + '" aria-label="Aumentar ' + esc(p.name + " " + p.size) + '">+</button></div>';
       else action = '<button type="button" class="btn-add" data-add="' + p.id + '">Adicionar ao carrinho</button>';
-      return '<div class="card"><div class="photo">Foto do produto</div><div class="name">' + esc(p.name) + '</div><div class="size">' + esc(p.size) + '</div><div class="price">' + money(p.price) + '*</div><div class="avail' + (p.available ? "" : " out") + '">' + (p.available ? "Disponível" : "Sem estoque no momento") + '</div><div class="actions">' + action + "</div></div>";
+      var photo = p.type === "gas"
+        ? '<img class="photo" src="assets/g%C3%A1s.png" alt="' + esc(p.name) + '">'
+        : p.type === "agua"
+          ? '<img class="photo" src="assets/%C3%A1gua.png" alt="' + esc(p.name) + '">'
+          : '<div class="photo">Foto do produto</div>';
+      return '<div class="card">' + photo + '<div class="name">' + esc(p.name) + '</div><div class="size">' + esc(p.size) + '</div><div class="price">' + money(p.price) + '*</div><div class="avail' + (p.available ? "" : " out") + '">' + (p.available ? "Disponível" : "Sem estoque no momento") + '</div><div class="actions">' + action + "</div></div>";
     }).join("");
   }
-
   // ===== Carrinho =====
   function renderCart() {
     var box = $("#cart-items");

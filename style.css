@@ -54,7 +54,7 @@ button { cursor: pointer; }
 .header { padding: 12px 16px; background: var(--surface); border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 10px; position: sticky; top: 0; z-index: 10; }
 .row { display: flex; align-items: center; gap: 10px; }
 .row8 { display: flex; align-items: center; gap: 8px; }
-.logo { width: 44px; height: 44px; border: 2px dashed var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: var(--muted); }
+.logo { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: var(--muted); object-fit: cover; }
 .brand { flex: 1; font-weight: 800; font-size: 18px; line-height: 1.1; }
 .icon-btn { width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--fg); display: flex; align-items: center; justify-content: center; position: relative; padding: 0; text-decoration: none; }
 .cart-wrap { position: relative; width: 44px; height: 44px; }
@@ -70,11 +70,11 @@ html[data-theme="dark"] .badge { color: var(--cta-fg); }
 .main { padding: 16px; display: flex; flex-direction: column; gap: 20px; flex: 1; }
 .main.tight { gap: 12px; padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
 
-.banner { background: var(--banner); color: var(--banner-fg); border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+.banner { background: #052A66; color: var(--banner-fg); border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 12px; }
 .banner h1 { margin: 0; font-size: 28px; line-height: 1.1; }
 .banner p { margin: 0; font-size: 15px; opacity: .9; }
-.banner .photo { height: 90px; border-radius: 14px; border: 1px dashed rgb(156, 203, 240); display: flex; align-items: center; justify-content: center; font-size: 12px; color: rgb(191, 224, 248); }
-.btn-cta { min-height: 48px; border: 0; border-radius: 14px; background: var(--cta); color: var(--cta-fg); font-weight: 800; font-size: 16px; }
+.banner .photo { height: auto; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: rgb(191, 224, 248); }
+.btn-cta { min-height: 48px; border: 0; border-radius: 14px; background: var(--cta); color: #052A66; font-weight: 800; font-size: 16px; }
 
 .search { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 14px; border-radius: 16px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); }
 .search input { flex: 1; border: 0; background: none; color: var(--fg); font-size: 16px; min-height: 48px; outline: none; }
@@ -87,7 +87,7 @@ html[data-theme="dark"] .badge { color: var(--cta-fg); }
 
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 10px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow); }
-.card .photo { height: 96px; border-radius: 12px; background: var(--soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; }
+.card .photo { height: auto; border-radius: 12px; background: var(--soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; object-fit: cover; }
 .card .name { font-weight: 800; font-size: 15px; line-height: 1.2; }
 .card .size { font-size: 13px; color: var(--muted); }
 .card .price { font-weight: 800; font-size: 18px; }
@@ -174,3 +174,5 @@ html[data-theme="dark"] .badge { color: var(--cta-fg); }
 .preview { background: var(--ok-bg); border: 1px solid var(--border); border-radius: 16px; padding: 16px; font-size: 14px; line-height: 1.5; color: var(--fg); white-space: pre-wrap; word-break: break-word; }
 .btn-wa { min-height: 56px; border: 0; width: 100%; border-radius: 14px; background: var(--wa); color: var(--wa-fg); font-weight: 800; font-size: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; padding: 12px 16px; line-height: 1.2; text-align: center; flex-shrink: 0; }
 .center { font-size: 13px; color: var(--muted); text-align: center; }
+
+.card img.photo { width: 100%; object-fit: contain; }
