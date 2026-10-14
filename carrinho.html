@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carrinho — Alba Gás e Água</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>try{if(localStorage.getItem("alba_theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+</head>
+<body>
+<div class="page">
+  <header class="bar">
+    <a class="back" href="index.html" aria-label="Voltar">←</a>
+    <h1>Carrinho</h1>
+    <div class="cart-wrap"><a class="icon-btn" href="carrinho.html" data-cart-btn aria-label="Abrir carrinho"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 7H6"/></svg></a><span class="badge" data-cart-count hidden>0</span></div>
+  </header>
+  <main class="main tight">
+    <div id="cart-items" style="display:flex;flex-direction:column;gap:12px" aria-live="polite"></div>
+    <div class="coupon">
+      <input id="coupon" type="text" placeholder="Cupom de desconto" aria-label="Cupom de desconto" autocomplete="off">
+      <button type="button" id="apply-coupon">Aplicar</button>
+    </div>
+    <div class="msg" id="coupon-msg" role="status" hidden></div>
+    <div class="summary">
+      <div class="line"><span>Subtotal</span><span id="sum-subtotal">R$ 0,00</span></div>
+      <div class="line"><span>Desconto</span><span id="sum-discount">−R$ 0,00</span></div>
+      <div class="line"><span>Taxa de entrega</span><span id="sum-fee">R$ 0,00</span></div>
+      <hr>
+      <div class="line total"><span>Total</span><span id="sum-total">R$ 0,00</span></div>
+    </div>
+    <div class="note">* Valores de exemplo.</div>
+    <a class="btn-primary" id="go-checkout" href="finalizar.html">Continuar para entrega</a>
+    <a class="center" href="index.html" style="color:var(--accent);font-weight:600;font-size:14px">Continuar comprando</a>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

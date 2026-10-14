@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Finalizar pedido — Alba Gás e Água</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>try{if(localStorage.getItem("alba_theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+</head>
+<body>
+<div class="page">
+  <header class="bar">
+    <a class="back" href="carrinho.html" aria-label="Voltar">←</a>
+    <h1>Finalizar pedido</h1>
+  </header>
+  <form class="main tight form" id="checkout-form" novalidate>
+    <h2>Dados do cliente</h2>
+    <div class="field"><label for="nome">Nome completo</label><input id="nome" name="nome" autocomplete="name" placeholder="Seu nome" required><div class="error" aria-live="polite"></div></div>
+    <div class="field"><label for="telefone">Telefone para contato</label><input id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(16) 99999-9999" required><div class="error" aria-live="polite"></div></div>
+    <div class="field"><label for="cep">CEP (opcional)</label><input id="cep" name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000"><div class="error" aria-live="polite"></div></div>
+    <div class="field"><label for="rua">Rua e endereço</label><input id="rua" name="rua" autocomplete="address-line1" placeholder="Rua" required><div class="error" aria-live="polite"></div></div>
+    <div class="split">
+      <div class="field"><label for="numero">Número</label><input id="numero" name="numero" inputmode="numeric" placeholder="Nº" required><div class="error" aria-live="polite"></div></div>
+      <div class="field"><label for="complemento">Complemento (opcional)</label><input id="complemento" name="complemento" placeholder="Apto, bloco"><div class="error"></div></div>
+    </div>
+    <div class="field"><label for="bairro">Bairro</label><input id="bairro" name="bairro" placeholder="Bairro" required><div class="error" aria-live="polite"></div></div>
+    <div class="field"><label for="cidade">Cidade</label><input id="cidade" name="cidade" autocomplete="address-level2" placeholder="Cidade" required><div class="error" aria-live="polite"></div></div>
+    <div class="field"><label for="obs">Observações (opcional)</label><textarea id="obs" name="obs" placeholder="Ex.: troco para R$ 50, ponto de referência"></textarea><div class="error"></div></div>
+
+    <fieldset class="pay">
+      <legend><h2>Pagamento</h2></legend>
+      <div class="hint">Pague na entrega. Não pedimos dados de cartão.</div>
+      <label><input type="radio" id="pay-pix" name="pagamento" value="pix"><span class="dot"></span><span class="check">Pix</span></label>
+      <label><input type="radio" name="pagamento" value="credito"><span class="dot"></span><span class="check">Cartão de crédito</span></label>
+      <label><input type="radio" name="pagamento" value="debito"><span class="dot"></span><span class="check">Cartão de débito</span></label>
+      <label><input type="radio" name="pagamento" value="dinheiro"><span class="dot"></span><span class="check">Dinheiro</span></label>
+      <div class="pay-error" id="pay-error" aria-live="polite"></div>
+    </fieldset>
+
+    <h2>Resumo do pedido</h2>
+    <div class="summary s8" id="co-summary"></div>
+    <div class="closed-note" id="closed-note" hidden>Loja fechada: atendemos das 08h às 22h. Você pode revisar, mas só confirma no horário.</div>
+
+    <h2>Revise antes de enviar</h2>
+    <div class="preview" id="co-preview"></div>
+
+    <button type="submit" class="btn-wa" id="send-wa" aria-label="Enviar pedido pelo WhatsApp para (16) 99797-4877">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-5A8.5 8.5 0 1 1 8 19.4z"/></svg>
+      Enviar pedido pelo WhatsApp
+    </button>
+    <div class="center">O pedido abre pronto no WhatsApp da Alba: (16) 99797-4877. Você confirma o envio por lá. Nenhum dado de cartão é pedido.</div>
+  </form>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
